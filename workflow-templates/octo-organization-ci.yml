@@ -1,4 +1,4 @@
-name: Octo Organization CI
+name: Octo Organization CI - Test Deployment Script
 
 on:
   push:
@@ -7,11 +7,13 @@ on:
     branches: [ $default-branch ]
 
 jobs:
-  build:
+  test-deployment:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Run a one-line script
+      - name: Run test deployment script
         run: echo Hello from Octo Organization
+
